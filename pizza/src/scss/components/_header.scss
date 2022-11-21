@@ -1,4 +1,4 @@
-@import '../variables.scss';
+@import "../variables.scss";
 
 .header {
   border-bottom: 1px solid $gray-line;
@@ -8,6 +8,25 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 645px) {
+      flex-direction: column;
+
+      .header__cart {
+        margin-top: 20px;
+      }
+
+      .header__logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1,
+        p {
+          text-align: center;
+        }
+      }
+    }
   }
 
   &__logo {
