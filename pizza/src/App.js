@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-
 import "./scss/app.scss";
 
 export const SearchContext = React.createContext("");
