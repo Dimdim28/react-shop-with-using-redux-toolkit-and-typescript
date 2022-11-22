@@ -10,6 +10,7 @@ import "./scss/app.scss";
 export const SearchContext = React.createContext("");
 function App() {
   const [searchValue, setSearchValue] = React.useState("");
+
   return (
     <div className="App">
       <div className="wrapper">
