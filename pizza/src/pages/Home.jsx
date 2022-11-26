@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import qs from "qs";
 import { useNavigate } from "react-router-dom";
 
@@ -10,14 +9,14 @@ import { Skeleton } from "../components/PizzaBlock/Skeleton";
 import { SearchContext } from "../App";
 import { useSelector, useDispatch } from "react-redux";
 import { setCategoryId, setFilters } from "../redux/slices/filterSlice";
+import { fetchPizzas } from "../redux/slices/pizzasSlice";
 const Home = () => {
   const navigate = useNavigate();
   const { searchValue } = React.useContext(SearchContext);
-  const [items, setItems] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
+
   const isSearch = React.useRef(false);
   const isMounted = React.useRef(false);
-
+  const { items, status } = useSelector((state) => state.pizza);
   const { categoryId, sort } = useSelector((state) => state.filter);
   const sortType = sort.sortProperty;
   const dispatch = useDispatch();
@@ -26,21 +25,11 @@ const Home = () => {
     dispatch(setCategoryId(id));
   };
 
-  const fetchPizzas = () => {
-    setIsLoading(true);
-    console.log("fetching...");
+  const getPizzas = async () => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";
     const sortBy = sortType.replace("Ask", "");
     const order = sortType.includes("Ask") ? "&order=desc" : "";
-
-    axios
-      .get(
-        `https://62cd928f066bd2b699287a7a.mockapi.io/items?${category}&sortBy=${sortBy}${order}`
-      )
-      .then((res) => {
-        setItems(res.data);
-        setIsLoading(false);
-      });
+    dispatch(fetchPizzas(category, sortBy, order));
   };
 
   React.useEffect(() => {
@@ -55,7 +44,7 @@ const Home = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
     if (!isSearch.current) {
-      fetchPizzas();
+      getPizzas();
     }
     isSearch.current = false;
   }, [categoryId, sortType, searchValue]);
@@ -76,7 +65,7 @@ const Home = () => {
       obj.title.toLowerCase().includes(searchValue.toLowerCase())
     )
     .map((obj) => <PizzaBlock key={obj.id} {...obj} />);
-  const skeleton = [...new Array(6)].map((_, index) => (
+  const skeletons = [...new Array(6)].map((_, index) => (
     <Skeleton key={index} />
   ));
 
@@ -87,7 +76,19 @@ const Home = () => {
         <Sort />
       </div>
       <h2 className="content__title">Все пиццы</h2>
-      <div className="content__items">{isLoading ? skeleton : pizzas}</div>
+      {status === "error" ? (
+        <div className="content__error-info">
+          <h2>Произошла ошибка 😞</h2>
+          <p>
+            К сожалению, не удалось получить пиццы, попробуйте повторить попытку
+            позже
+          </p>
+        </div>
+      ) : (
+        <div className="content__items">
+          {status === "loading" ? skeletons : pizzas}
+        </div>
+      )}
     </div>
   );
 };

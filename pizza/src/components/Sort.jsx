@@ -24,13 +24,11 @@ function Sort() {
     const handleClickOutside = (event) => {
       if (!event.path.includes(sortRef.current)) {
         setOpen(false);
-        console.log("click");
       }
     };
 
     document.body.addEventListener("click", handleClickOutside);
     return () => {
-      console.log("unmounted");
       document.body.removeEventListener("click", handleClickOutside);
     };
   }, []);
