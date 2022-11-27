@@ -26,18 +26,27 @@ const FullPizza = () => {
   if (!pizza) {
     return <Preloader />;
   }
-  console.log(pizza);
+
   return (
-    <div className="container">
-      <img src={pizza.imageUrl} alt="pizzaImage" />
-      <h1>{pizza.title}</h1>
-      <h4>{pizza.price}</h4>
-      <p>
+    <div className="container fullPizzaContainer">
+      <div className="pizzaImageContainer">
+        <img src={pizza.imageUrl} alt="pizzaImage" className="PizzaImage" />
+      </div>
+      <h1 className="title">Пицца "{pizza.title}"</h1>
+      <div className="line">
+        <p className="rating">
+          Рейтинг: {"⭐".repeat(pizza.rating) + "☆".repeat(10 - pizza.rating)}
+        </p>
+        <p className="totalPrice">{pizza.price} </p>
+      </div>
+
+      <p className="about">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem
         optio, quisquam dolor odio sapiente ullam neque cupiditate! Vel, nihil
-        nisi.
+        nisi. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Voluptatem optio, quisquam dolor odio sapiente ullam neque cupiditate!
+        Vel, nihil nisi.
       </p>
-      <h4>250 </h4>
     </div>
   );
 };

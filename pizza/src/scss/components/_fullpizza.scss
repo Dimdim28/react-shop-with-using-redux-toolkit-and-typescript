@@ -1,0 +1,32 @@
+.fullPizzaContainer {
+  .pizzaImageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .PizzaImage {
+      width: 50%;
+    }
+  }
+
+  .title {
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+  }
+  .line {
+    display: flex;
+    justify-content: space-around;
+    .rating {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+    .totalPrice {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+  }
+  .about {
+    text-align: initial;
+  }
+}
