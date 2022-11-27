@@ -1,4 +1,4 @@
-{
+ {
     "compilerOptions": {
       "target": "es5", // Specify ECMAScript target version
       "lib": [

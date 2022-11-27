@@ -13,7 +13,7 @@ import {
   setFilters,
 } from "../redux/slices/filterSlice";
 import { fetchPizzas, selectPizza } from "../redux/slices/pizzasSlice";
-const Home = () => {
+const Home: React.FC = () => {
   const navigate = useNavigate();
   const isSearch = React.useRef(false);
   const isMounted = React.useRef(false);
@@ -22,7 +22,7 @@ const Home = () => {
   const sortType = sort.sortProperty;
   const dispatch = useDispatch();
 
-  const onChangeCategory = (id) => {
+  const onChangeCategory = (id: number) => {
     dispatch(setCategoryId(id));
   };
 
@@ -30,7 +30,10 @@ const Home = () => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";
     const sortBy = sortType.replace("Ask", "");
     const order = sortType.includes("Ask") ? "&order=desc" : "";
-    dispatch(fetchPizzas(category, sortBy, order));
+    dispatch(
+      //@ts-ignore
+      fetchPizzas(category, sortBy, order)
+    );
   };
 
   React.useEffect(() => {
@@ -62,10 +65,10 @@ const Home = () => {
   }, [navigate, categoryId, sortType, searchValue]);
 
   const pizzas = items
-    .filter((obj) =>
+    .filter((obj: any) =>
       obj.title.toLowerCase().includes(searchValue.toLowerCase())
     )
-    .map((obj) => <PizzaBlock {...obj} key={obj.id} />);
+    .map((obj: any) => <PizzaBlock {...obj} key={obj.id} />);
   const skeletons = [...new Array(6)].map((_, index) => (
     <Skeleton key={index} />
   ));
