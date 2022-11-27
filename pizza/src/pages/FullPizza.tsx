@@ -3,8 +3,13 @@ import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Preloader from "../components/Preloader";
 
-const FullPizza = () => {
-  const [pizza, setPizza] = React.useState();
+const FullPizza: React.FC = () => {
+  const [pizza, setPizza] = React.useState<{
+    imageUrl: string;
+    title: string;
+    price: number;
+    rating: number;
+  }>();
   const { id } = useParams();
   const navigate = useNavigate();
   React.useEffect(() => {
