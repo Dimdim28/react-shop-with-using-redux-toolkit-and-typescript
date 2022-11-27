@@ -1,0 +1,90 @@
+.preLoader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.preLoader .shape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-5em);
+}
+
+.preLoader .shape .circle {
+  width: 50px;
+  height: 50px;
+  background-color: #fdb113;
+  border-radius: 50%;
+  margin: 0 1rem;
+  animation: bounce 0.6s linear infinite;
+}
+.preLoader .shape .circle:nth-child(2) {
+  background-color: #006aca;
+  animation-delay: 0.1s;
+}
+.preLoader .shape .circle:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.preLoader .shadow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-5em);
+}
+
+.preLoader .shadow .shapeShadow {
+  width: 50px;
+  height: 18px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  margin: 0 1rem;
+  animation: bounceShadow 0.6s linear infinite;
+  transform: translateY(5em) scale(0.5);
+}
+.preLoader .shadow .shapeShadow:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.preLoader .shadow .shapeShadow:nth-child(3) {
+  animation-delay: 0.2s;
+}
+@keyframes bounce {
+  from,
+  to {
+    transform: translateY(0) scale(1, 1);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: translateY(5em) scale(1, 1);
+    animation-timing-function: linear;
+  }
+  50% {
+    transform: translateY(5em) scale(1.5, 0.5);
+    animation-timing-function: linear;
+  }
+  100% {
+    transform: translateY(5em) scale(1, 1);
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes bounceShadow {
+  from,
+  to {
+    transform: translateY(5em) scale(0.5);
+    filter: blur(5px);
+  }
+  45% {
+    transform: translateY(5em) scale(0.5);
+  }
+  50% {
+    box-shadow: 20px 0 5px rgba(0, 0, 0, 0.1), -20px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    transform: translateY(5em) scale(0.5);
+    box-shadow: unset;
+  }
+}

@@ -65,7 +65,7 @@ const Home = () => {
     .filter((obj) =>
       obj.title.toLowerCase().includes(searchValue.toLowerCase())
     )
-    .map((obj) => <PizzaBlock key={obj.id} {...obj} />);
+    .map((obj) => <PizzaBlock {...obj} key={obj.id} />);
   const skeletons = [...new Array(6)].map((_, index) => (
     <Skeleton key={index} />
   ));
