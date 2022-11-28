@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Preloader from "../components/Preloader";
 
 const FullPizza: React.FC = () => {
@@ -42,7 +42,7 @@ const FullPizza: React.FC = () => {
         <p className="rating">
           Рейтинг: {"⭐".repeat(pizza.rating) + "☆".repeat(10 - pizza.rating)}
         </p>
-        <p className="totalPrice">{pizza.price} </p>
+        <p className="totalPrice">{pizza.price} ₽ </p>
       </div>
 
       <p className="about">
@@ -52,6 +52,11 @@ const FullPizza: React.FC = () => {
         Voluptatem optio, quisquam dolor odio sapiente ullam neque cupiditate!
         Vel, nihil nisi.
       </p>
+      <Link to="/">
+        <button className="button button-outline button--add">
+          <span>Назад</span>
+        </button>
+      </Link>
     </div>
   );
 };
