@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/657.071245f2.chunk.css","mappings":"AAAA,sBACE,kBAEA,2BACE,gBAGF,yBACE,YAEF,wBACE","sources":["components/NotFoundBlock/NotFound.module.scss"],"sourcesContent":[".root {\n  text-align: center;\n\n  span {\n    font-size: 100px;\n  }\n\n  h1 {\n    margin: 20px;\n  }\n  p {\n    font-size: 22px;\n  }\n}\n"],"names":[],"sourceRoot":""}
