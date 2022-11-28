@@ -67,3 +67,34 @@
     letter-spacing: 0.015em;
   }
 }
+
+@media (max-width: 400px) {
+  .pizza-block {
+    width: 300px;
+
+    &__price {
+      font-size: 16px;
+    }
+    &__image {
+      width: 200px;
+    }
+    &__selector {
+      padding: 3px;
+      width: 100%;
+      margin: 0 auto;
+
+      ul li {
+        padding: 3px;
+      }
+    }
+    &__bottom {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .pizza-block {
+    width: 200px;
+  }
+}

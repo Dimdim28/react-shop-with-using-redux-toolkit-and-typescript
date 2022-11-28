@@ -5,6 +5,17 @@
   left: -120px;
 }
 
+@media (max-width: 1300px) {
+  .root {
+    position: relative;
+    left: 0px;
+    margin-top: 20px;
+  }
+  .input {
+    width: 100%;
+  }
+}
+
 .input {
   border: 1px solid $orange;
   border-radius: 10px;
@@ -35,4 +46,10 @@
   right: 14px;
   opacity: 0.3;
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .input {
+    width: 100%;
+  }
 }
