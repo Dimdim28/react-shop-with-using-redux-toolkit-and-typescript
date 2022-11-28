@@ -23,7 +23,7 @@ export interface FilterSliceState {
 const initialState: FilterSliceState = {
   searchValue: "",
   categoryId: 0,
-  sort: { name: "популярности", sortProperty: SortPropertyEnum.PRICE_DESK },
+  sort: { name: "популярности", sortProperty: SortPropertyEnum.RATING },
 };
 
 

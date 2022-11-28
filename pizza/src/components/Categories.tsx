@@ -13,20 +13,24 @@ const categories = [
   "Закрытые",
 ];
 
-const Categories: React.FC<CategoriesProps> = ({ value, onChangeCategory }) => (
-  <div className="categories">
-    <ul>
-      {categories.map((categoryName, ind) => (
-        <li
-          key={ind}
-          onClick={() => onChangeCategory(ind)}
-          className={value === ind ? "active" : ""}
-        >
-          {categoryName}
-        </li>
-      ))}
-    </ul>
-  </div>
+const Categories: React.FC<CategoriesProps> = React.memo(
+  ({ value, onChangeCategory }) => {
+    return (
+      <div className="categories">
+        <ul>
+          {categories.map((categoryName, ind) => (
+            <li
+              key={ind}
+              onClick={() => onChangeCategory(ind)}
+              className={value === ind ? "active" : ""}
+            >
+              {categoryName}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
 );
 
 export default Categories;

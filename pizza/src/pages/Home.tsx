@@ -1,7 +1,6 @@
 import React from "react";
 import qs from "qs";
 import { useNavigate } from "react-router-dom";
-
 import Categories from "../components/Categories";
 import Sort, { list } from "../components/Sort";
 import PizzaBlock from "../components/PizzaBlock";
@@ -27,9 +26,9 @@ const Home: React.FC = () => {
   const sortType = sort.sortProperty;
   const dispatch = useAppDispatch();
 
-  const onChangeCategory = (id: number) => {
+  const onChangeCategory = React.useCallback((id: number) => {
     dispatch(setCategoryId(id));
-  };
+  }, []);
 
   const getPizzas = async () => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";
@@ -87,7 +86,7 @@ const Home: React.FC = () => {
     <div className="container">
       <div className="content__top">
         {<Categories value={categoryId} onChangeCategory={onChangeCategory} />}
-        <Sort />
+        <Sort value={sort} />
       </div>
       <h2 className="content__title">Все пиццы</h2>
       {status === "error" ? (
