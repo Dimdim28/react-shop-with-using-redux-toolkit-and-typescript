@@ -6,13 +6,18 @@ import Categories from "../components/Categories";
 import Sort, { list } from "../components/Sort";
 import PizzaBlock from "../components/PizzaBlock";
 import { Skeleton } from "../components/PizzaBlock/Skeleton";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import {
   selectFilter,
   setCategoryId,
   setFilters,
 } from "../redux/slices/filterSlice";
-import { fetchPizzas, selectPizza } from "../redux/slices/pizzasSlice";
+import {
+  fetchPizzas,
+  SearchPizzaParams,
+  selectPizza,
+} from "../redux/slices/pizzasSlice";
+import { useAppDispatch } from "../redux/store";
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const isSearch = React.useRef(false);
@@ -20,7 +25,7 @@ const Home: React.FC = () => {
   const { items, status } = useSelector(selectPizza);
   const { categoryId, sort, searchValue } = useSelector(selectFilter);
   const sortType = sort.sortProperty;
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const onChangeCategory = (id: number) => {
     dispatch(setCategoryId(id));
@@ -30,17 +35,22 @@ const Home: React.FC = () => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";
     const sortBy = sortType.replace("Ask", "");
     const order = sortType.includes("Ask") ? "&order=desc" : "";
-    dispatch(
-      //@ts-ignore
-      fetchPizzas(category, sortBy, order)
-    );
+    dispatch(fetchPizzas({ category, sortBy, order, search: "" }));
   };
 
   React.useEffect(() => {
     if (window.location.search) {
-      const params = qs.parse(window.location.search.substring(1));
-      const sort = list.find((obj) => obj.sortProperty === params.sortProperty);
-      dispatch(setFilters({ ...params, sort }));
+      const params = qs.parse(
+        window.location.search.substring(1)
+      ) as unknown as SearchPizzaParams;
+      const sort = list.find((obj) => obj.sortProperty === params.sortBy);
+      dispatch(
+        setFilters({
+          categoryId: Number(params.category),
+          sort: sort ? sort : list[0],
+          searchValue: "",
+        })
+      );
       isSearch.current = true;
     }
   }, []);
