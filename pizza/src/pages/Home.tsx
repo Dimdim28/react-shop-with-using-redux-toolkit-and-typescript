@@ -6,17 +6,15 @@ import Sort, { list } from "../components/Sort";
 import PizzaBlock from "../components/PizzaBlock";
 import { Skeleton } from "../components/PizzaBlock/Skeleton";
 import { useSelector } from "react-redux";
-import {
-  selectFilter,
-  setCategoryId,
-  setFilters,
-} from "../redux/slices/filterSlice";
-import {
-  fetchPizzas,
-  SearchPizzaParams,
-  selectPizza,
-} from "../redux/slices/pizzasSlice";
+import { selectFilter } from "../redux/filter/selectors";
+import { selectPizza } from "../redux/pizzas/selectors";
+
+import { setCategoryId, setFilters } from "../redux/filter/slice";
+import { SearchPizzaParams } from "../redux/pizzas/slice";
+
 import { useAppDispatch } from "../redux/store";
+import { fetchPizzas } from "../redux/pizzas/asyncActions";
+
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const isSearch = React.useRef(false);
