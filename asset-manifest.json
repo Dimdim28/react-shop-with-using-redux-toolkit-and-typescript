@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-shop-with-using-redux-toolkit-and-typescript/static/css/main.4d380dc3.css",
-    "main.js": "/react-shop-with-using-redux-toolkit-and-typescript/static/js/main.d726e3c2.js",
+    "main.js": "/react-shop-with-using-redux-toolkit-and-typescript/static/js/main.ad87f825.js",
     "static/js/986.bb23383c.chunk.js": "/react-shop-with-using-redux-toolkit-and-typescript/static/js/986.bb23383c.chunk.js",
     "static/js/335.91606c3e.chunk.js": "/react-shop-with-using-redux-toolkit-and-typescript/static/js/335.91606c3e.chunk.js",
     "static/css/657.071245f2.chunk.css": "/react-shop-with-using-redux-toolkit-and-typescript/static/css/657.071245f2.chunk.css",
@@ -10,7 +10,7 @@
     "static/media/empty-cart.png": "/react-shop-with-using-redux-toolkit-and-typescript/static/media/empty-cart.db905d1f4b063162f25b.png",
     "index.html": "/react-shop-with-using-redux-toolkit-and-typescript/index.html",
     "main.4d380dc3.css.map": "/react-shop-with-using-redux-toolkit-and-typescript/static/css/main.4d380dc3.css.map",
-    "main.d726e3c2.js.map": "/react-shop-with-using-redux-toolkit-and-typescript/static/js/main.d726e3c2.js.map",
+    "main.ad87f825.js.map": "/react-shop-with-using-redux-toolkit-and-typescript/static/js/main.ad87f825.js.map",
     "986.bb23383c.chunk.js.map": "/react-shop-with-using-redux-toolkit-and-typescript/static/js/986.bb23383c.chunk.js.map",
     "335.91606c3e.chunk.js.map": "/react-shop-with-using-redux-toolkit-and-typescript/static/js/335.91606c3e.chunk.js.map",
     "657.071245f2.chunk.css.map": "/react-shop-with-using-redux-toolkit-and-typescript/static/css/657.071245f2.chunk.css.map",
@@ -18,6 +18,6 @@
   },
   "entrypoints": [
     "static/css/main.4d380dc3.css",
-    "static/js/main.d726e3c2.js"
+    "static/js/main.ad87f825.js"
   ]
 }
