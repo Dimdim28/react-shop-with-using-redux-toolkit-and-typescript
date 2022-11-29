@@ -97,7 +97,7 @@ const CartItemBlock: React.FC<CartItemProps> = ({
         </button>
       </div>
       <div className="cart__item-price">
-        <b>{price * count}</b>
+        <b>{(price * count) / 2}</b>
       </div>
       <div className="cart__item-remove">
         <div

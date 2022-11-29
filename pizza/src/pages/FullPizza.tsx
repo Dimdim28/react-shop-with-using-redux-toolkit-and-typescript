@@ -42,7 +42,7 @@ const FullPizza: React.FC = () => {
         <p className="rating">
           Рейтинг: {"⭐".repeat(pizza.rating) + "☆".repeat(10 - pizza.rating)}
         </p>
-        <p className="totalPrice">{pizza.price} ₽ </p>
+        <p className="totalPrice"> Минимальная цена {pizza.price / 2} ₴ </p>
       </div>
 
       <p className="about">
