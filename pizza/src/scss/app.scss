@@ -44,6 +44,7 @@ body {
     font-weight: 800;
     margin-top: 60px;
     margin-bottom: 40px;
+    text-align: center;
   }
 
   &__items {
@@ -460,6 +461,29 @@ body {
         .button {
           margin-top: 10px;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 1060px) {
+  .cart {
+    &--empty {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .cart {
+    &--empty {
+      width: 80%;
+      img {
+        width: 100%;
+      }
+      .button--black {
+        width: 80%;
       }
     }
   }
