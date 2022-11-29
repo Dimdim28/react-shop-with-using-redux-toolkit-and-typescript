@@ -23,6 +23,8 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
   sizes,
   types,
 }) => {
+  // console.log(id, title, price, imageUrl, sizes, types);
+
   const dispatch = useDispatch();
   const cartItem = useSelector(selectCartItemsById(id));
 
@@ -30,12 +32,24 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
   const activeTypeNumber = types.includes(0) ? 0 : 1;
   const [activeType, setactiveType] = useState(activeTypeNumber);
   const [activeSize, setactiveSize] = useState(0);
+  const [activePrice, setactivePrice] = useState(price);
+
+  React.useEffect(() => {
+    setactivePrice(Math.round((price / sizes[0]) * sizes[activeSize]));
+  }, [activeSize, price, sizes]);
+
+  React.useEffect(() => {
+    if (activeType === 0) setactivePrice((price) => price * 0.5);
+    else {
+      setactivePrice((price) => price * 2);
+    }
+  }, [activeType]);
 
   const onClickAdd = () => {
     const item: CartItem = {
       id,
       title,
-      price,
+      price: activePrice,
       imageUrl,
       type: typeNames[activeType],
       size: sizes[activeSize],
@@ -76,7 +90,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
           </ul>
         </div>
         <div className="pizza-block__bottom">
-          <div className="pizza-block__price">от {price} ₽</div>
+          <div className="pizza-block__price"> {activePrice} ₽</div>
           <button
             onClick={onClickAdd}
             className="button button--outline button--add"
