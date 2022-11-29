@@ -24,6 +24,7 @@
     .totalPrice {
       font-size: 20px;
       margin: 10px 0;
+      text-align: center;
     }
   }
   .about {
@@ -31,5 +32,17 @@
   }
   .button {
     margin-top: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .fullPizzaContainer {
+    .line {
+      flex-direction: column;
+      .rating {
+        text-align: center;
+        font-size: 16px;
+      }
+    }
   }
 }
