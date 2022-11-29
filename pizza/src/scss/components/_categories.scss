@@ -1,6 +1,9 @@
-@import '../variables.scss';
+@import "../variables.scss";
 
 .categories {
+  &::-webkit-scrollbar {
+    display: none;
+  }
   ul {
     display: flex;
 
