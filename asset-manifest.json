@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-shop-with-using-redux-toolkit-and-typescript/static/css/main.fc9b00a0.css",
+    "main.css": "/react-shop-with-using-redux-toolkit-and-typescript/static/css/main.dc11e290.css",
     "main.js": "/react-shop-with-using-redux-toolkit-and-typescript/static/js/main.4c6e063f.js",
     "static/js/986.bb23383c.chunk.js": "/react-shop-with-using-redux-toolkit-and-typescript/static/js/986.bb23383c.chunk.js",
     "static/js/335.91606c3e.chunk.js": "/react-shop-with-using-redux-toolkit-and-typescript/static/js/335.91606c3e.chunk.js",
@@ -9,7 +9,7 @@
     "static/media/pizza-logo.svg": "/react-shop-with-using-redux-toolkit-and-typescript/static/media/pizza-logo.cf6d3b6be905864076d6bda85444ef62.svg",
     "static/media/empty-cart.png": "/react-shop-with-using-redux-toolkit-and-typescript/static/media/empty-cart.db905d1f4b063162f25b.png",
     "index.html": "/react-shop-with-using-redux-toolkit-and-typescript/index.html",
-    "main.fc9b00a0.css.map": "/react-shop-with-using-redux-toolkit-and-typescript/static/css/main.fc9b00a0.css.map",
+    "main.dc11e290.css.map": "/react-shop-with-using-redux-toolkit-and-typescript/static/css/main.dc11e290.css.map",
     "main.4c6e063f.js.map": "/react-shop-with-using-redux-toolkit-and-typescript/static/js/main.4c6e063f.js.map",
     "986.bb23383c.chunk.js.map": "/react-shop-with-using-redux-toolkit-and-typescript/static/js/986.bb23383c.chunk.js.map",
     "335.91606c3e.chunk.js.map": "/react-shop-with-using-redux-toolkit-and-typescript/static/js/335.91606c3e.chunk.js.map",
@@ -17,7 +17,7 @@
     "657.334cd8a5.chunk.js.map": "/react-shop-with-using-redux-toolkit-and-typescript/static/js/657.334cd8a5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc9b00a0.css",
+    "static/css/main.dc11e290.css",
     "static/js/main.4c6e063f.js"
   ]
 }
