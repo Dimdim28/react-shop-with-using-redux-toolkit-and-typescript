@@ -12,4 +12,4 @@ Online store developed as a pet project using these technologies:
 - CSS-Modules / SCSS 
 - React Content Loader 
 - Lodash.Debounce
-- Code Splitting, React Loadable, useWhyDidYouUpdate
+- Code Splitting, useWhyDidYouUpdate(removed after using)
